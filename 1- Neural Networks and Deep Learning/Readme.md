@@ -262,12 +262,12 @@ Here are the course summary as its given on the course [link](https://www.course
   	J = 0; dw1 = 0; dw2 =0; db = 0;                 # Devs.
   	w1 = 0; w2 = 0; b=0;							# Weights
   	for i = 1 to m
-  		# Forward pass
+  		# Forward Propagation
   		z(i) = W1*x1(i) + W2*x2(i) + b
   		a(i) = Sigmoid(z(i))
   		J += (Y(i)*log(a(i)) + (1-Y(i))*log(1-a(i)))
 
-  		# Backward pass
+  		# Backward Propagation
   		dz(i) = a(i) - Y(i)
   		dw1 += dz(i) * x1(i)
   		dw2 += dz(i) * x2(i)
@@ -421,7 +421,7 @@ Here are the course summary as its given on the course [link](https://www.course
     a[2, i] = sigmoid(z[2, i])  # shape of a[2, i] is (1,1)
   ```
 
-- Lets say we have `X` on shape `(Nx,m)`. So the new pseudo code:
+- Lets say we have `X` on shape `(Nx,m)`. Pseudo code for Forward Propagation:
 
   ```
   Z1 = W1X + b1     # shape of Z1 (noOfHiddenNeurons,m)
